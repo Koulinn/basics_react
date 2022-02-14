@@ -1,10 +1,11 @@
 import React from 'react'
 
-function GenericView({ title, heroText }) {
+function GenericView(props) {
+    console.log(props, 'props1')
     return (
         <main>
-            <h1>{title}</h1>
-            <div>{heroText}</div>
+            <h1>{props.title}</h1>
+            <div>{props.heroText}</div>
         </main>
     )
 }
