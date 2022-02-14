@@ -37,7 +37,8 @@ const mockData = [
         ],
         qty: 10,
     },
-    { category: 'BBQ' },
+    { category: 'BBQ', qty: 'undefined' },
+    { category: 'Bakery' },
 ]
 
 function NestedArray() {
@@ -65,7 +66,26 @@ function NestedArray() {
                                 ))}
                             </ul>
                         )}
-                        <h5>Qty : {data.qty ? data.qty : 'N/A'}</h5>
+                        {data.items && (
+                            <ul>
+                                {data.items.map((i) => (
+                                    <li key={i.name}>{i.name}</li>
+                                ))}
+                            </ul>
+                        )}
+
+                        {/* Example 1 if N/A is necessary */}
+                        <h5>
+                            Qty :{' '}
+                            {data.qty && data.qty !== 'undefined'
+                                ? data.qty
+                                : 'N/A'}
+                        </h5>
+
+                        {/* Example 2 if N/A is not necessary */}
+                        {/* {data.qty && data.qty !== 'undefined' && (
+                            <h5>Qty : {data.qty}</h5>
+                        )} */}
                     </div>
                 ))}
             </div>
