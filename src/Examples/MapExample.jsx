@@ -22,19 +22,29 @@ function MapExample() {
       </div>
 
       {serverData.length > 0 ? (
-        <div>
+        <div className="section">
           {serverData.map((data) => (
-            <div>
+            <div key={data.id}>
               <h6>{data.id}</h6>
-              {/* notice that text and imgUrl are doesn't exist in 2 elements of the data */}
-              <p>{data.text}</p>
-              <h6>{data.caption}</h6>
+              {/* notice that text and caption doesn't exist in 2 elements of the data */}
+              {data.text && <p>{data.text}</p>}
+              {data.caption && <h6>{data.caption}</h6>}
             </div>
           ))}
         </div>
       ) : (
         <div>Loading...</div>
       )}
+
+      {/* Example with empty array, serverData with empty array */}
+
+      {/* {serverData.map((data) => (
+        <div key={data.id}>
+          <h6>{data.id}</h6>
+          {data.text && <p>{data.text}</p>}
+          {data.caption && <h6>{data.caption}</h6>}
+        </div>
+      ))} */}
     </>
   );
 }

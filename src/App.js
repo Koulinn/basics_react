@@ -5,8 +5,8 @@ import NestedArray from "./Examples/NestedArray";
 function App() {
   return (
     <div className="App">
-      <MapExample />
-      {/* <NestedArray /> */}
+      {/* <MapExample /> */}
+      <NestedArray />
     </div>
   );
 }
