@@ -25,7 +25,6 @@ function ChainingOperator() {
       <h2>ChainingOperator</h2>
       <button onClick={() => setMockData(mockObject1)}>MockData 1</button>
       <button onClick={() => setMockData(mockObject2)}>MockData 2</button>
-      <button onClick={() => setMockData(mockObject3)}>MockData 3</button>
 
       <br></br>
       <h3>Data</h3>
@@ -42,7 +41,7 @@ function ChainingOperator() {
             {mockData.people.add2 && <p>{mockData.people.add2}</p>}
           </>
         ) : (
-          <p>Select a data</p>
+          <p>Loading...</p>
         )}
       </div>
     </div>
