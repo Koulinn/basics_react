@@ -3,3 +3,11 @@
   refs:
   - "refs/heads/main"
   fail_on_prepare_env_warning: true
+  actions:
+  - action: "Send email"
+    type: "EMAIL"
+    trigger_time: "ON_WAIT_FOR_APPROVE"
+    title: "$BUDDY_PIPELINE_NAME execution #$BUDDY_EXECUTION_ID"
+    content: "test email message"
+    send_as_html: true
+    recipients: "drdverzola@gmail.com"
