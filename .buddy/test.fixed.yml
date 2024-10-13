@@ -7,6 +7,15 @@
   fail_on_prepare_env_warning: true
   do_not_create_commit_status: true
   actions:
+  - action: "npm run build"
+    type: "BUILD"
+    docker_image_name: "library/node"
+    docker_image_tag: "22"
+    execute_commands:
+    - "# yarn install"
+    - "npm install"
+    - "npm run build"
+    shell: "BASH"
   - action: "Send email"
     type: "EMAIL"
     trigger_time: "ON_WAIT_FOR_APPROVE"
